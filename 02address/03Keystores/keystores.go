@@ -17,7 +17,7 @@ keystore是一个包含经过加密了的钱包私钥。go-ethereum中的keystor
 您每次调用NewAccount，它将在磁盘上生成新的keystore文件。
 */
 func createKs(password string) (string, error) {
-	ks := keystore.NewKeyStore("./02address/03.Keystores/key", keystore.StandardScryptN, keystore.StandardScryptP)
+	ks := keystore.NewKeyStore("./02address/03Keystores/key", keystore.StandardScryptN, keystore.StandardScryptP)
 	account, err := ks.NewAccount(password)
 	if err != nil {
 		log.Fatal(err)
@@ -37,7 +37,7 @@ func createKs(password string) (string, error) {
 但它将生成新keystore文件！有两个相同的事物是没有意义的，所以我们将删除旧的。
 */
 func importKs(ksFilePath, password string) error {
-	ks := keystore.NewKeyStore("./02address/03.Keystores/key2", keystore.StandardScryptN, keystore.StandardScryptP)
+	ks := keystore.NewKeyStore("./02address/03Keystores/key2", keystore.StandardScryptN, keystore.StandardScryptP)
 	jsonBytes, err := ioutil.ReadFile(ksFilePath)
 	if err != nil {
 		panic(err)
