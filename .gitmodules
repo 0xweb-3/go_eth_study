@@ -1,0 +1,3 @@
+[submodule "03transaction/04sendERC20/token/lib/forge-std"]
+	path = 03transaction/04sendERC20/token/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
