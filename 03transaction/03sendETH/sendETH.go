@@ -82,6 +82,23 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// 创建裸交易
+	//ts := types.Transactions{signedTx}
+	//rawTxBytes := ts.GetRlp(0)
+	//rawTxHex := hex.EncodeToString(rawTxBytes)
+	//fmt.Printf(rawTxHex)
+
+	// 发送裸交易
+	//rawTx := "f86d8202b28477359400825208944592d8f8d7b001e72cb26a73e4fa1806a51ac79d880de0b6b3a7640000802ca05924bde7ef10aa88db9c66dd4f5fb16b46dff2319b9968be983118b57bb50562a001b24b31010004f13d9a26b320845257a6cfc2bf819a3d55e3fc86263c5f0772"
+	//rawTxBytes, err := hex.DecodeString(rawTx)
+	//tx := new(types.Transaction)
+	//rlp.DecodeBytes(rawTxBytes, &tx)
+	//err = client.SendTransaction(context.Background(), tx)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//fmt.Printf("tx sent: %s", tx.Hash().Hex())
+
 	// 发送交易
 	err = client.SendTransaction(context.Background(), signedTx)
 	if err != nil {
