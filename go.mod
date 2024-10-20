@@ -3,7 +3,6 @@ module github.com/0xweb-3/go_eth_study
 go 1.22.2
 
 require (
-	github.com/davecgh/go-spew v1.1.1
 	github.com/ethereum/go-ethereum v1.14.11
 	github.com/miguelmota/go-ethereum-hdwallet v0.1.2
 )
