@@ -50,6 +50,12 @@ func Deploy() {
 		panic(err)
 	}
 
+	// 从rpc上获取chainID
+	//chainID, err := client.NetworkID(context.Background())
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+
 	auth.Nonce = big.NewInt(int64(nonce))
 	auth.Value = big.NewInt(0)     // in wei
 	auth.GasLimit = uint64(300000) // in units
@@ -62,7 +68,7 @@ func Deploy() {
 		panic(err)
 	}
 
-	fmt.Println(address.Hex())   //0x6247649d7ff9128555c8C9582361012CCFC07A49 合约地址
+	fmt.Println(address.Hex())   // 0x6247649d7ff9128555c8C9582361012CCFC07A49 合约地址
 	fmt.Println(tx.Hash().Hex()) // 0x56432f255e552c74a3fad04f60f11552acb3f3e43d546c8ff2cf3c2b90e7148d 部署交易hash
 
 	_ = instance
